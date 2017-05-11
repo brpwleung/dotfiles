@@ -2,9 +2,9 @@ setopt prompt_subst
 
 function prompt_symbol {
     local symbol=''
-    symbol="${symbol}%(!.%F{red}.%F{yellow})\u2bc8%f"
-    symbol="${symbol}%1(j.%F{green}.%F{yellow})\u2bc8%f"
-    symbol="${symbol}%(?.%F{yellow}.%F{red})\u2bc8%f"
+    symbol="${symbol}%(!.%F{red}.%F{yellow})\u25cf%f"
+    symbol="${symbol}%1(j.%F{green}.%F{yellow})\u25cf%f"
+    symbol="${symbol}%(?.%F{yellow}.%F{red})\u25cf%f"
     symbol="%B${symbol}%b"
     printf '%b' "${symbol}"
 }
