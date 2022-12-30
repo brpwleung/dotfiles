@@ -1,5 +1,5 @@
-# Start gpg-agent manually using the prescribed procedure for GnuPG 2.1, so
-# that an available instance is guaranteed to serve SSH as a key agent.
+# Start gpg-agent manually using the prescribed procedure for GnuPG 2.1, to
+# make sure an instance is available for SSH as a key agent
 if ! pgrep -x -u "${USER}" gpg-agent > /dev/null 2>&1; then
     gpg-connect-agent /bye > /dev/null 2>&1
 fi
@@ -17,9 +17,9 @@ if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
     export SSH_AUTH_SOCK
 fi
 
-# Configure GnuPG with the proper terminal context.
+# Configure GnuPG with the proper terminal context
 export GPG_TTY="$(tty)"
 
-# Refresh gpg-agent terminal context deliberately only because, according
-# to the GnuPG 2.1 documentation, SSH will not instruct gpg-agent to do so.
+# Deliberately refresh gpg-agent terminal context because, according to the
+# GnuPG 2.1 documentation, SSH will not instruct gpg-agent to do the same
 gpg-connect-agent updatestartuptty /bye > /dev/null

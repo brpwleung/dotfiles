@@ -1,2 +1,2 @@
-# Stop echoing caret notations of input control-key combinations.
+# Stop echoing caret notations of input control-key combinations
 stty -echoctl
